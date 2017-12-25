@@ -32,7 +32,7 @@
     }
     // iOS8+
     try {
-      window.webkit.messageHandlers.setShareInfo.postMessage(shareInfo);
+      window.shareCurrentTemperature();
       return;
     } catch (e) {
       console.log('Call iOS Exception : ' + e.toString());
