@@ -22,27 +22,11 @@
 </head>
 <body>
   <script>
-  function share(shareInfo) {
-     // Android
-    try {
-      window.appDispose.setShareInfo(shareInfo);
-      return;
-    } catch (e) {
-      console.log('Call Android Exception : ' + e.toString());
-    }
-    // iOS8+
-    try {
-      window.shareCurrentTemperature();
-      return;
-    } catch (e) {
-      console.log('Call iOS Exception : ' + e.toString());
-    }
-  };
 
   </script>
   <header class="container">
     <section class="content">
- <button type="button" onclick="share()">Share</button>
+      
       <h2 id="date">12월 21일 목요일</h2>
       <h1>지금 한강은</h1>
       <image src="./images/line.jpg"/>
