@@ -17,8 +17,40 @@
 
   <!-- responsive-full-background-image.css stylesheet contains the code you want -->
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript">
+ 
+    $(document).ready(function(){
+         
+        console.log("Start");
 
+        var date = new Date();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var days = ["일", "월", "화", "수", "목", "금", "토"];
 
+         document.getElementById('date').innerHTML = (month+1)+"월 "+day+"일 "+days[date.getDay()]+"요일";
+         
+        $.ajax({
+             
+            type : "GET",
+            url : "http://127.0.0.1:8000/temperatures",
+            dataType : "json",
+            error : function(){
+                document.getElementById('temperature').value="통신오류";
+            },
+            success : function(data){
+                console.log("통신데이터 값 : " + JSON.stringify(data));
+                var obj=JSON.parse(JSON.stringify(data));
+                document.getElementById('temperature').innerHTML=obj["구리"];
+            }
+             
+        });
+         
+ 
+    });
+ 
+  </script>
 </head>
 <body>
   <script>
@@ -31,7 +63,7 @@
       <h1>지금 한강은</h1>
       <image src="./images/line.jpg"/>
       <p></p>
-      <h3 id="temperature" class="inline">12.2</h3>
+      <h3 id="temperature" class="inline"></h3>
       <h4 class="inline">℃</h4>
 
     </section>
