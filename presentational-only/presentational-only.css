@@ -76,3 +76,10 @@ strong {
 #more-content {
   display: none;
 }
+
+div.line {
+  height: 2px;
+  width: 70%;
+  background: white;
+  margin-top: 20px;
+}
