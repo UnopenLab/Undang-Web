@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="presentational-only/presentational-only.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://dev.kakao.com/sdk/js/kakao-1.2.0.min.js"></script>
     <script type="text/javascript" language="javascript">
 
       $(document).ready(function(){
 
           console.log("Start");
+          Kakao.init('8939bce6fbc07d81cfffa7a4e5d1decc');
 
           var date = new Date();
           var month = date.getMonth();
@@ -37,8 +39,34 @@
       });
 
     </script>
+    <script src="Javascript/Share.js"></script>
   </head>
   <body>
+    <div class="dim-layer">
+      <div class="dim-background"></div>
+      <div class="pop-layer">
+        <div class="close-share">
+          <img src="images/btn-x.png" srcset="images/btn-x@2x.png 2x,images/btn-x@3x.png 3x">
+        </div>
+        <div class="share-item-list">
+          <div class="share-item">
+            <img src="images/ic-fb.png" srcset="img/ic-fb@2x.png 2x, img/ic-fb@3x.png 3x">
+            <p>페이스북</p>
+          </div>
+          <div class="share-item">
+            <img src="images/ic-kakao.png" srcset="img/ic-kakao@2x.png 2x, img/ic-kakao@3x.png 3x" id="share_kakao">
+            <p>카카오톡</p>
+          </div>
+          <div class="share-item">
+            <img src="images/ic-url.png" srcset="img/ic-url@2x.png 2x, img/ic-url@3x.png 3x">
+            <p>URL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="share">
+      <img src="images/ic-share.png" srcset="images/ic-share@2x.png 2x,images/ic-share@3x.png 3x">
+    </div>
     <div class="main">
       <h2 id="date">12월 21일 목요일</h2>
       <h1>지금 한강은</h1>
